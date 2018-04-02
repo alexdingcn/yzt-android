@@ -32,7 +32,7 @@
     <preference name="stay-in-webview" value="true" />
     <content src="guide.html" />
     <access origin="*" />
-    <allow-navigation href="https://yibanmed.com" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
