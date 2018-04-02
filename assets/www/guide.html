@@ -14,11 +14,17 @@
     <link href="./css/guide/common.css" rel="stylesheet" type="text/css" />
     <link href="./css/guide/font.css" rel="stylesheet" type="text/css" />
     <link href="./css/guide/guide.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
     <link rel="stylesheet" href="css/swiper.min.css?v=56d9b8b2ca"/>
     <style type="text/css">
     header .ui-header-positive {
         background-color: #3670C5;
+    }
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
     }
     .swiper-container img{
         width: 100%;
@@ -31,112 +37,108 @@
         font-size: 18px;
         background: #fff;
     }
+    .nav-flex li { text-align: center }
+    .nav-flex li i { font-size: 36px; line-height: 36px;}
     </style>
+
     <script src="js/fastclick.js?v=6e9d3b0da7"></script>
     <script type="text/javascript" src="libs/zepto.min.js?v=c6ee36ccfc"></script>
     <script src="guide.js?v=ad66990745"></script>
     <script src="js/swiper.min.js?v=508d39206e"></script>
+    <!--<script type="text/javascript" src="cordova.js"></script>-->
+    <script type="text/javascript" src="js/app.js"></script>
+
 </head>
 <body>
 
 <header class="header">
     <div class="head-flex">
         <div class="classify-box"><i class="classify">&#x3557;</i></div>
+        <!--<div class="search-box"><h1>医站通</h1></div>-->
         <div class="search-box"><input type="text" placeholder="输入搜索关键词"><i class="search search-btn">&#xe6ae;</i></div>
-        <div class="shopcar-box"><i class="shopcar">&#xe726;</i></div>
+        <div class="shopcar-box" id="jumpLogin"><i class="iconfont icon-shenfenzheng" style="font-size:24px"></i></div>
     </div>
 </header>
 
-<section class="ui-container" style="margin-top:0;width:100%;">
-    <div class="swiper-container" id="swiper">
-        <div class="swiper-wrapper">
-            <!--<div class="swiper-slide">
-              <div style="background-image: url(images/guide/2208-5.png);background-size:100% ;width: auto;height: auto; width: 100%;height: 100%;">
-                  <button id="jumpLogin" style="color: white;margin: 0 auto; ">立即体验</button>
-              </div>
-      </div>  -->
-
-            <div class="swiper-slide"><img src="images/guide/2208-1.png"/></div>
-            <div class="swiper-slide"><img src="images/guide/2208-2.png"/></div>
-            <div class="swiper-slide"><img src="images/guide/2208-3.png"/></div>
-            <div class="swiper-slide"><img src="images/guide/2208-4.png"/></div>
-            <div class="swiper-slide" style="position:relative;">
-                <img src="images/guide/2208-5.png"/>
-                <div id="jumpLogin" class="a2"
-                     style="width: 5rem;background: #e38832;color: white;position:absolute; left:40%; bottom:11.5%;margin: 0 auto;">
-                    立即体验
-                </div>
-            </div>
-
+<section class="ui-container" style="margin-top:3rem;width:100%;">
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="adlist">
+            <div class="swiper-slide" onclick="jumpToUrl('https://www.baidu.com')"><img src="images/guide/2208-1.png"/></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>
-
-
     </div>
 </section>
 
 <section class="nav-area">
+
     <div class="nav-flex">
         <ul>
-            <li><span class="ffb20c"></span><p>招商信息</p></li>
-            <li><span class="ff4400"></span><p>厂家列表</p></li>
-            <li><span class="e55634"></span><p>新闻资讯</p></li>
-            <li><span class="bg-22a6f9"></span><p>金融服务</p></li>
+            <li><i class="iconfont icon-zhaoshangdaili"></i><p>招商信息</p></li>
+            <li><i class="iconfont icon-cailiaochangjia"></i><p>厂家列表</p></li>
+            <li><i class="iconfont icon-xinwen"></i><p>新闻资讯</p></li>
+            <li><i class="iconfont icon-jinrongxingye"></i><p>金融服务</p></li>
         </ul>
     </div>
 </section>
 
 <section>
-    <div class="title border-b"><i></i>分类一</div>
+    <div class="title border-b">
+        <i class="iconfont icon-favorite"></i><span id="promotionTitle">优品推荐</span>
+    </div>
     <div class="content">
-        <div class="content-flex border-r pd-t-20">
-            <h2>【品牌】商品标题</h2>
-            <p class="price">￥2300</p>
-            <div><img src="img/1.jpg" alt=""></div>
+        <div class="content-flex border-r pd-t-10 align-c" id="promotion0">
+            <h2><span class="item_title">商品标题</span></h2>
+            <p class="subtitle price"></p>
+            <div><img class="product_image" alt=""></div>
         </div>
         <div class="content-flex">
-            <div class="content-item">
+            <div class="content-item" id="promotion1">
                 <div class="item-flex">
-                    <h2>【品牌】<br>商品标题</h2>
-                    <p class="price">￥2300</p>
+                    <h2><span class="item_title">商品标题</span></h2>
+                    <p class="subtitle price"></p>
                 </div>
-                <div class="item-flex"><img src="img/2.jpg" alt=""></div>
+                <div class="item-flex pd-t-0"><img class="product_image" alt=""></div>
             </div>
-            <div class="content-item border-t">
-                <div class="item-flex"><img src="img/2.jpg" alt=""></div>
+            <div class="content-item border-t" id="promotion2">
+                <div class="item-flex"><img class="product_image" alt=""></div>
                 <div class="item-flex">
-                    <h2>【品牌】<br>商品标题</h2>
-                    <p class="price">￥2300</p>
+                    <h2><span class="item_title">商品标题</span></h2>
+                    <p class="subtitle price"></p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="banner ffb20c"><img src="img/banner.png" alt=""></div>
+<section>
+<div id="ad0"/>
+</section>
+
 
 <section>
-    <div class="title border-b"><i></i>分类三</div>
+    <div class="title border-b">
+        <i class="iconfont icon--diannao"></i><span id="promTitle">优惠促销</span>
+    </div>
     <div class="content">
-        <div class="content-flex border-r pd-t-20">
-            <h2>【品牌】商品标题</h2>
-            <p class="price">￥2300</p>
-            <div><img src="img/1.jpg" alt=""></div>
+        <div class="content-flex border-r pd-t-10 align-c" id="prom0">
+            <h2><span class="item_title">商品标题</span></h2>
+            <p class="subtitle price"></p>
+            <div><img class="product_image" alt=""></div>
         </div>
         <div class="content-flex">
-            <div class="content-item">
+            <div class="content-item" id="prom1">
                 <div class="item-flex">
-                    <h2>【品牌】<br>商品标题</h2>
-                    <p class="price">￥2300</p>
+                    <h2><span class="item_title">商品标题</span></h2>
+                    <p class="subtitle price"></p>
                 </div>
-                <div class="item-flex"><img src="img/2.jpg" alt=""></div>
+                <div class="item-flex pd-t-0"><img class="product_image" alt=""></div>
             </div>
-            <div class="content-item border-t">
-                <div class="item-flex"><img src="img/2.jpg" alt=""></div>
+            <div class="content-item border-t" id="prom2">
+                <div class="item-flex"><img class="product_image" alt=""></div>
                 <div class="item-flex">
-                    <h2>【品牌】<br>商品标题</h2>
-                    <p class="price">￥2300</p>
+                    <h2><span class="item_title">商品标题</span></h2>
+                    <p class="subtitle price"></p>
                 </div>
             </div>
         </div>
@@ -149,13 +151,5 @@
     咨询热线：40077-40088
 </footer>
 
-
-<script>
-        window.onload=function(){
-            var swiper = document.getElementById("swiper");
-            var scale = window.screen.height / window.screen.width;
-            swiper.style.height = window.screen.height * 0.35 + "px";
-        }
-</script>
 </body>
 </html>

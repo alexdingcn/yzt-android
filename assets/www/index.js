@@ -1,6 +1,9 @@
 /** 初始页 */
 var usersObj = '';
 $(function() {
+    var frontPage = 'guide.html?t=' + Math.random();
+    var loginPage = 'company_pages/login/login.html?t=' + Math.random();
+    // 'company_pages/login/login.html?t=' + Math.random();
 	var setJumpPage = function() {
 		//自动登陆
 		if(usersObj.CType === 1) {
@@ -8,7 +11,7 @@ $(function() {
 		} else if(usersObj.CType === 2) {
 			window.location.href = 'reseller_pages/home/home.html?t=' + Math.random();
 		} else {
-			window.location.href = 'company_pages/login/login.html?t=' + Math.random();
+			window.location.href = loginPage;
 		}
 	};
 
@@ -23,7 +26,7 @@ $(function() {
 		// 获取本地保存的登陆角色
 		var roleDetail = localStorage.getItem('$login_role') || "";
 		if(roleDetail === null || roleDetail === '') {
-			window.location.href = 'company_pages/login/login.html?t=' + Math.random();
+			window.location.href = loginPage;
 			return;
 		}
 
@@ -95,13 +98,13 @@ $(function() {
 				// 保存微信openid
 				localStorage.setItem('$wx_openid', response.OpenID);
 				if(enterpriseID === '' || enterpriseID === undefined) {
-					window.location.href = 'company_pages/login/login.html?t=' + Math.random();
+					window.location.href = loginPage;
 				} else {
 					window.location.href = 'shop_page/mall_home.html?t=' + Math.random() + '&id=' + enterpriseID;
 				}
 			} else {
 				if(enterpriseID === '' || enterpriseID === undefined) {
-					window.location.href = 'company_pages/login/login.html?t=' + Math.random();
+					window.location.href = loginPage;
 				} else {
 					window.location.href = 'shop_page/mall_home.html?t=' + Math.random() + '&id=' + enterpriseID;
 				}

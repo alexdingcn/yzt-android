@@ -94,6 +94,8 @@ input[type="number"] {
 .pd-l-10 {padding-left:10px!important;}
 .pd-r-10 {padding-right:10px!important;}
 .pd-20 {padding:20px!important;}
+.pd-t-0 {padding-top:0!important;}
+.pd-t-10 {padding-top:10px!important;}
 .pd-t-20 {padding-top:20px!important;}
 .pd-b-20 {padding-bottom:20px!important;}
 .pd-l-20 {padding-left:20px!important;}

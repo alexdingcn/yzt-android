@@ -29,8 +29,10 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <preference name="stay-in-webview" value="true" />
     <content src="guide.html" />
     <access origin="*" />
+    <allow-navigation href="https://yibanmed.com" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
