@@ -37,6 +37,16 @@
         font-size: 18px;
         background: #fff;
     }
+    .nav-area a {
+        color: #333333;
+    }
+    .nav-area a:link {
+
+        text-decoration: none;
+    }
+    .nav-area a:visited {
+        text-decoration: none;
+    }
     .nav-flex li { text-align: center }
     .nav-flex li i { font-size: 36px; line-height: 36px;}
     </style>
@@ -63,7 +73,9 @@
 <section class="ui-container" style="margin-top:3rem;width:100%;">
     <div class="swiper-container">
         <div class="swiper-wrapper" id="adlist">
-            <div class="swiper-slide" onclick="jumpToUrl('https://www.baidu.com')"><img src="images/guide/2208-1.png"/></div>
+            <div class="swiper-slide" onclick="jumpToUrl('https://www.baidu.com')">
+                <img src="images/screen-xxhdpi-portrait.png"/>
+            </div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>
@@ -74,10 +86,29 @@
 
     <div class="nav-flex">
         <ul>
-            <li><i class="iconfont icon-zhaoshangdaili"></i><p>招商信息</p></li>
-            <li><i class="iconfont icon-cailiaochangjia"></i><p>厂家列表</p></li>
-            <li><i class="iconfont icon-xinwen"></i><p>新闻资讯</p></li>
-            <li><i class="iconfont icon-jinrongxingye"></i><p>金融服务</p></li>
+            <li>
+                <a href="https://www.yibanmed.com/zslist.html">
+                    <i class="iconfont icon-zhaoshangdaili"></i><p>招商信息</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.yibanmed.com/compnew.html">
+                    <i class="iconfont icon-cailiaochangjia"></i>
+                    <p>厂家列表</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.yibanmed.com/news_1.html">
+                    <i class="iconfont icon-xinwen"></i>
+                    <p>新闻资讯</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.yibanmed.com/financial.html">
+                    <i class="iconfont icon-jinrongxingye"></i>
+                    <p>金融服务</p>
+                </a>
+            </li>
         </ul>
     </div>
 </section>
